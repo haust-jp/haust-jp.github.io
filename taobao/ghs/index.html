@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+
+<head>
+    <meta charset="utf-8">
+    <title>taobao</title>
+    <!-- <script src="https://cdn.bootcss.com/vConsole/3.2.2/vconsole.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        .bg img {
+            width: 100%;
+            /* aspect-ratio: auto 468 / 625;
+            height: 625px; */
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="margin: 0px; background: #0e0e0e; height: 100%">
+    <div style="text-align: center;">
+        <div id="title" style="color:white; margin-bottom: 10px;">
+        </div>
+        <div class="bg">
+            <img id="taobao"
+                style="margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
+                src="">
+        </div>
+    </div>
+    <script>
+        // var vConsole = new VConsole();
+        var index = {};
+        $(function () {
+
+            var img = $('#taobao');
+
+            $.get("https://api.ghser.com/tao/?type=json", function (data) {
+                console.log(data);
+                $('#title').html(data.title);
+                $('#taobao').attr('src', data.pic);
+            });
+        });
+    </script>
+</body>
+
+</html>
