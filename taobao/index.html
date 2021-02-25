@@ -40,11 +40,6 @@
 
             var img = $('#taobao');
 
-            img.addEventListener('onload', function () {
-                console.log('我的宽度是: ', this.naturalWidth);
-                console.log('我的高度是: ', this.naturalHeight);
-            });
-
             $.get("https://api.vvhan.com/api/tao?type=json", function (data) {
                 //console.log(data);
                 $('#title').html(data.title);
