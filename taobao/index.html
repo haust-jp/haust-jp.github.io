@@ -13,8 +13,11 @@
 
         .bg img {
             width: 468px;
-            aspect-ratio: auto 468 / 625;
-            height: 625px;
+            /* aspect-ratio: auto 468 / 625;
+            height: 625px; */
+            height: auto;
+            max-width: 100%;
+            display: block;
         }
     </style>
 </head>
@@ -32,6 +35,14 @@
     <script>
         var index = {};
         $(function () {
+
+            var img = $('#taobao');
+
+            img.addEventListener('onload', function () {
+                console.log('我的宽度是: ', this.naturalWidth);
+                console.log('我的高度是: ', this.naturalHeight);
+            });
+
             $.get("https://api.vvhan.com/api/tao?type=json", function (data) {
                 //console.log(data);
                 $('#title').html(data.title);
