@@ -42,8 +42,8 @@
 
             $.get("https://api.vvhan.com/api/tao?type=json", function (data) {
                 console.log(data);
-                //$('#title').html(data.title);
-                //$('#taobao').attr('src', data.pic);
+                $('#title').html(data.title);
+                $('#taobao').attr('src', data.pic);
             });
         });
     </script>
