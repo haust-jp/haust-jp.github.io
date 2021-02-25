@@ -41,9 +41,9 @@
             var img = $('#taobao');
 
             $.get("https://api.vvhan.com/api/tao?type=json", function (data) {
-                //console.log(data);
-                $('#title').html(data.title);
-                $('#taobao').attr('src', data.pic);
+                console.log(data);
+                //$('#title').html(data.title);
+                //$('#taobao').attr('src', data.pic);
             });
         });
     </script>
